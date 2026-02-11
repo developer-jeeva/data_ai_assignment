@@ -101,8 +101,8 @@ Locate secrets.toml inside /.streamilt
 ``` python
 
 snowflake.connector.connect(
-user = "jeevatj"
-password = "veTigJ88s3SP9gY"
+user: dbtuser
+password: dataAItest2026#
 account = "rlxazxg-ow84266"
 warehouse = "COMPUTE_WH"
 database = "INDUSTRIAL_PROCUREMENT_DB"
