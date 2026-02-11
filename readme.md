@@ -136,13 +136,7 @@ The raw dataset is saved as:
   
 
 ```
-
-  
-
 raw_data.csv
-
-  
-
 ```
 
   
@@ -191,11 +185,8 @@ Navigate to the scraper directory:
   
 
 ```bash
-
 cd  scraper
-
 pip  install  -r  requirements.txt
-
 ```
 
   
@@ -209,9 +200,7 @@ pip  install  -r  requirements.txt
   
 
 ```bash
-
 python  scraper.py
-
 ```
 
   
@@ -225,9 +214,7 @@ After execution:
   
 
 ```
-
 ..output/raw_data.csv
-
 ```
 
   
@@ -268,9 +255,7 @@ Open **Snowflake Worksheets** and run:
   
 
 ```
-
 /sql/01_create_tables.sql
-
 ```
 
   
@@ -340,9 +325,7 @@ Upload:
   
 
 ```
-
 raw_data.csv
-
 ```
 
   
@@ -374,9 +357,7 @@ Run:
   
 
 ```
-
 /sql/02_load_data.sql
-
 ```
 
   
@@ -396,9 +377,7 @@ After this step:
   
 
 ```
-
 RAW.PRODUCT_INGESTION
-
 ```
 
   
@@ -430,9 +409,7 @@ contains the scraped dataset.
   
 
 ```bash
-
 pip  install  dbt-snowflake
-
 ```
 
   
@@ -458,9 +435,7 @@ Create the file:
   
 
 ```
-
 C:\Users\<username>\.dbt\profiles.yml
-
 ```
 
   
@@ -510,9 +485,7 @@ client_session_keep_alive: False
 ```bash
 
 cd  dbt_project
-
 dbt  debug
-
 ```
 
   
@@ -526,9 +499,7 @@ Expected output:
   
 
 ```
-
 All checks passed!
-
 ```
 
   
@@ -548,9 +519,7 @@ All checks passed!
   
 
 ```bash
-
 dbt  run
-
 ```
 
   
