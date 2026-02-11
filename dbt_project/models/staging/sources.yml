@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    database: INDUSTRIAL_PROCUREMENT_DB
+    schema: RAW
+    tables:
+      - name: product_ingestion
+        description: "Raw scraped product data stored as JSON from IndustryBuying procurement website"

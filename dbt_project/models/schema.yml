@@ -1,0 +1,50 @@
+version: 2
+
+models:
+
+  - name: stg_product_catalog
+    description: "Cleaned product data extracted from raw JSON ingestion table"
+
+    columns:
+      - name: ingestion_id
+        description: "Unique ingestion record id"
+        tests:
+          - not_null
+          - unique
+
+      - name: sku
+        description: "Product SKU identifier"
+        tests:
+          - not_null
+
+  - name: dim_product
+    description: "Master product dimension table (deduplicated products)"
+
+    columns:
+      - name: product_id
+        description: "Surrogate key for product"
+        tests:
+          - unique
+          - not_null
+
+      - name: sku
+        description: "Natural key from source"
+        tests:
+          - not_null
+
+  - name: fct_product_snapshot
+    description: "Time-based product observations containing price, stock and rating"
+
+    columns:
+      - name: product_id
+        description: "Foreign key to dim_product"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_product')
+              field: product_id
+
+      - name: scraped_at
+        description: "Timestamp when product was scraped"
+        tests:
+          - not_null
